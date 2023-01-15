@@ -65,7 +65,7 @@ class ContactController extends Controller
         if ($identif == $contact->user_id){
             return view('agenda.edit', compact('contact', 'identif'));
         }else{
-            return redirect('/404/');
+            return redirect('/404s/');
         }
     }
 
