@@ -97,6 +97,12 @@ class ContactController extends Controller
 
 
     }
-
+    
+    public function p404()
+    {
+        $contacts = Contact::all();
+        
+        return view('p404');
+    }
 
 }

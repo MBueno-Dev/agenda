@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/contacts/edit/{id}', 'App\Http\Controllers\ContactController@edit');
     Route::post('/contacts/update/{id}', 'App\Http\Controllers\ContactController@update');
     Route::get('/contacts/delete/{id}', 'App\Http\Controllers\ContactController@delete');
+    Route::get('/404/', 'App\Http\Controllers\ContactController@p404');
 });
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
