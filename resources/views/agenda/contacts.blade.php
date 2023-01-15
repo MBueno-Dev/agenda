@@ -9,10 +9,12 @@
     <a href="/contacts/create">Criar contato</a>
     <ul>
         @foreach ($contacts as $item)
-            <li>
-                <a href="/contacts/show/{{ $item->id }}">
-                {{ $item->name }}
-            </li>    
+            @if ($identif==$item->user_id)
+                <li>
+                    <a href="/contacts/show/{{ $item->id }}">
+                    {{ $item->name }}    
+                </li>    
+            @endif
 
         @endforeach
     </ul>

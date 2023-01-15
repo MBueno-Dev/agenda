@@ -10,7 +10,7 @@ class ContactController extends Controller
     public function index()
     {
         $contacts = Contact::all();
-
+        
         return view('agenda/contacts', compact('contacts'));
     }
 
@@ -18,7 +18,8 @@ class ContactController extends Controller
     {
         $user = auth()->user();
         $contacts = Contact::all();
-        return view('/agenda/contacts', compact('user', 'contacts'));
+        $identif = auth()->id();
+        return view('/agenda/contacts', compact('user', 'contacts', 'identif'));
     }
 
     public function create()
@@ -65,7 +66,7 @@ class ContactController extends Controller
         if ($identif == $contact->user_id){
             return view('agenda.edit', compact('contact', 'identif'));
         }else{
-            return redirect('/404s/');
+            return redirect('/404/');
         }
     }
 
