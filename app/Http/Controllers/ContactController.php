@@ -53,7 +53,8 @@ class ContactController extends Controller
         if ($identif == $contact->user_id){
             return view('agenda.show', compact('contact', 'identif'));
         }else{
-            return redirect('/404/');
+            abort(404);
+            #return redirect('/404/');
         }
     }
  
@@ -92,7 +93,8 @@ class ContactController extends Controller
             $contact->delete();
             return redirect('/contacts/' );
         }else{
-            return redirect('/404/');
+            abort(404);
+            #return redirect('/404/');
         }
 
 
